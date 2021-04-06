@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-04-05 Mon 20:48 -->
+<!-- 2021-04-06 Tue 09:53 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Loan-Loss Provisioning During COVID-19</title>
@@ -229,27 +229,29 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org6a9b982">1. Data</a></li>
-<li><a href="#orgacb2ce0">2. Charts</a>
+<li><a href="#org2d74dbb">1. Data</a></li>
+<li><a href="#org3d38416">2. Charts</a>
 <ul>
-<li><a href="#orgd3c5b64">2.1. Total Loan Losses per Quarter</a></li>
-<li><a href="#org5cdea02">2.2. Securities Gains/Losses by Quarter</a></li>
-<li><a href="#org041d6ec">2.3. Income Taxes by Quarter</a></li>
+<li><a href="#org412779a">2.1. Total Loan Losses per Quarter</a></li>
+<li><a href="#orgaa08845">2.2. Securities Gains/Losses by Quarter</a></li>
+<li><a href="#orga104be5">2.3. Income Taxes by Quarter</a></li>
 </ul>
 </li>
-<li><a href="#org1ac389a">3. Is There a Correlation Between Taxes and Loan Loss Reserve Increases</a>
+<li><a href="#org7ac04b7">3. Is There a Correlation Between Taxes and Loan Loss Reserve Increases</a>
 <ul>
-<li><a href="#orgea3c067">3.1. All Banks</a></li>
-<li><a href="#orgb5fc697">3.2. Small Banks (&lt; $500 million)</a></li>
-<li><a href="#org107d5ac">3.3. Large Banks (&gt; $500 million)</a></li>
+<li><a href="#org090f953">3.1. All Banks</a></li>
+<li><a href="#org1281195">3.2. Small Banks (&lt; $500 million)</a></li>
+<li><a href="#org62bc588">3.3. Large Banks (&gt; $500 million)</a></li>
 </ul>
 </li>
-<li><a href="#org3f1f107">4. Cross-Sectional Regression</a>
+<li><a href="#org7e8702c">4. Cross-Sectional Regression</a>
 <ul>
-<li><a href="#org751dbda">4.1. Variables in Regression</a></li>
+<li><a href="#orgfa07a24">4.1. Variables in Regression</a></li>
+<li><a href="#orgc35d422">4.2. Including Credit Default Swaps</a></li>
+<li><a href="#orgac31162">4.3. Excluding Credit Default Swaps</a></li>
 </ul>
 </li>
-<li><a href="#orgc8d9746">5. Variables Available in Panel</a></li>
+<li><a href="#org97f155b">5. Variables Available in Panel</a></li>
 </ul>
 </div>
 </div>
@@ -265,8 +267,8 @@ Changes to this <i>contra-asset</i> account are recorded in the income statement
 Due to the effect on income, loan loss reserves have a long history of being used for earnings smoothing and tax mitigation strategy.
 </p>
 
-<div id="outline-container-org6a9b982" class="outline-2">
-<h2 id="org6a9b982"><span class="section-number-2">1</span> Data</h2>
+<div id="outline-container-org2d74dbb" class="outline-2">
+<h2 id="org2d74dbb"><span class="section-number-2">1</span> Data</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 For all variables available in the data set, see the list below.  Variables are listed by their FDIC codes, <a href="https://www7.fdic.gov/sdi/main.asp">which are available here.</a>
@@ -275,15 +277,15 @@ For all variables available in the data set, see the list below.  Variables are 
 </div>
 
 
-<div id="outline-container-orgacb2ce0" class="outline-2">
-<h2 id="orgacb2ce0"><span class="section-number-2">2</span> Charts</h2>
+<div id="outline-container-org3d38416" class="outline-2">
+<h2 id="org3d38416"><span class="section-number-2">2</span> Charts</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-orgd3c5b64" class="outline-3">
-<h3 id="orgd3c5b64"><span class="section-number-3">2.1</span> Total Loan Losses per Quarter</h3>
+<div id="outline-container-org412779a" class="outline-3">
+<h3 id="org412779a"><span class="section-number-3">2.1</span> Total Loan Losses per Quarter</h3>
 <div class="outline-text-3" id="text-2-1">
 
-<div id="org1764cb3" class="figure">
+<div id="org47da11b" class="figure">
 <p><img src="./total_quarterly_loan_losses_py.png" alt="total_quarterly_loan_losses_py.png" />
 </p>
 <p><span class="figure-number">Figure 1: </span>Total Loan Loss Reserves by Quarter.</p>
@@ -291,11 +293,11 @@ For all variables available in the data set, see the list below.  Variables are 
 </div>
 </div>
 
-<div id="outline-container-org5cdea02" class="outline-3">
-<h3 id="org5cdea02"><span class="section-number-3">2.2</span> Securities Gains/Losses by Quarter</h3>
+<div id="outline-container-orgaa08845" class="outline-3">
+<h3 id="orgaa08845"><span class="section-number-3">2.2</span> Securities Gains/Losses by Quarter</h3>
 <div class="outline-text-3" id="text-2-2">
 
-<div id="orge7b0e5b" class="figure">
+<div id="org72633b3" class="figure">
 <p><img src="./tot_sec_gains_by_quarter.png" alt="tot_sec_gains_by_quarter.png" />
 </p>
 <p><span class="figure-number">Figure 2: </span>Total Securities Gains and Losses by Quarter.</p>
@@ -303,11 +305,11 @@ For all variables available in the data set, see the list below.  Variables are 
 </div>
 </div>
 
-<div id="outline-container-org041d6ec" class="outline-3">
-<h3 id="org041d6ec"><span class="section-number-3">2.3</span> Income Taxes by Quarter</h3>
+<div id="outline-container-orga104be5" class="outline-3">
+<h3 id="orga104be5"><span class="section-number-3">2.3</span> Income Taxes by Quarter</h3>
 <div class="outline-text-3" id="text-2-3">
 
-<div id="orge6e7afc" class="figure">
+<div id="org2968472" class="figure">
 <p><img src="./inc_tax_gains_by_quarter.png" alt="inc_tax_gains_by_quarter.png" />
 </p>
 <p><span class="figure-number">Figure 3: </span>Total Income Taxes by Quarter.</p>
@@ -317,8 +319,8 @@ For all variables available in the data set, see the list below.  Variables are 
 </div>
 
 
-<div id="outline-container-org1ac389a" class="outline-2">
-<h2 id="org1ac389a"><span class="section-number-2">3</span> Is There a Correlation Between Taxes and Loan Loss Reserve Increases</h2>
+<div id="outline-container-org7ac04b7" class="outline-2">
+<h2 id="org7ac04b7"><span class="section-number-2">3</span> Is There a Correlation Between Taxes and Loan Loss Reserve Increases</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Here we take a look at whether banks with higher taxes paid as a percent of revenue in Q4 2019 increased their loan losses at a faster rate from Q4 2019 to Q3 2020.  We remove any bank with negative taxes, or percent change in loan losses not in the interval (-1, 1).
@@ -339,37 +341,37 @@ So redo the analysis below filtering for only banks with less than $500 million 
 </p>
 </div>
 
-<div id="outline-container-orgea3c067" class="outline-3">
-<h3 id="orgea3c067"><span class="section-number-3">3.1</span> All Banks</h3>
+<div id="outline-container-org090f953" class="outline-3">
+<h3 id="org090f953"><span class="section-number-3">3.1</span> All Banks</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 So we see a positive correlation of 0.13 between taxes and the change in loan loss reserves.
 </p>
 
 
-<div id="org630d079" class="figure">
+<div id="orgfe1403a" class="figure">
 <p><img src="./scatter_losses_taxes.png" alt="scatter_losses_taxes.png" />
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgb5fc697" class="outline-3">
-<h3 id="orgb5fc697"><span class="section-number-3">3.2</span> Small Banks (&lt; $500 million)</h3>
+<div id="outline-container-org1281195" class="outline-3">
+<h3 id="org1281195"><span class="section-number-3">3.2</span> Small Banks (&lt; $500 million)</h3>
 <div class="outline-text-3" id="text-3-2">
 </div>
 </div>
 
 
-<div id="outline-container-org107d5ac" class="outline-3">
-<h3 id="org107d5ac"><span class="section-number-3">3.3</span> Large Banks (&gt; $500 million)</h3>
+<div id="outline-container-org62bc588" class="outline-3">
+<h3 id="org62bc588"><span class="section-number-3">3.3</span> Large Banks (&gt; $500 million)</h3>
 <div class="outline-text-3" id="text-3-3">
 </div>
 </div>
 </div>
 
-<div id="outline-container-org3f1f107" class="outline-2">
-<h2 id="org3f1f107"><span class="section-number-2">4</span> Cross-Sectional Regression</h2>
+<div id="outline-container-org7e8702c" class="outline-2">
+<h2 id="org7e8702c"><span class="section-number-2">4</span> Cross-Sectional Regression</h2>
 <div class="outline-text-2" id="text-4">
 <pre class="example">
 &lt;class 'pandas.core.frame.DataFrame'&gt;
@@ -381,130 +383,164 @@ memory usage: 4.6+ MB
 </div>
 
 
-<div id="outline-container-org751dbda" class="outline-3">
-<h3 id="org751dbda"><span class="section-number-3">4.1</span> Variables in Regression</h3>
+<div id="outline-container-orgfa07a24" class="outline-3">
+<h3 id="orgfa07a24"><span class="section-number-3">4.1</span> Variables in Regression</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 Should add log of loan losses and net charge offs to assets, as well as variables from panel rebuild.
 </p>
 
 <pre class="example">
-/tmp/babel-u8vDsg/python-4WGOem:4: SettingWithCopyWarning: 
+/tmp/babel-u8vDsg/python-iVL9rq:4: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   X['asset5'] = np.log(X['asset5'])
 </pre>
+</div>
+</div>
 
+<div id="outline-container-orgc35d422" class="outline-3">
+<h3 id="orgc35d422"><span class="section-number-3">4.2</span> Including Credit Default Swaps</h3>
+<div class="outline-text-3" id="text-4-2">
 
+<table style="text-align:center"><tr><td colspan="2" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"></td><td><em>Dependent variable:</em></td></tr>
+<tr><td></td><td colspan="1" style="border-bottom: 1px solid black"></td></tr>
+<tr><td style="text-align:left"></td><td>per_change</td></tr>
+<tr><td colspan="2" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">intincy</td><td>0.008<sup>*</sup></td></tr>
+<tr><td style="text-align:left"></td><td>(0.005)</td></tr>
+<tr><td style="text-align:left"></td><td></td></tr>
+<tr><td style="text-align:left">nim</td><td>-0.000</td></tr>
+<tr><td style="text-align:left"></td><td>(0.000)</td></tr>
+<tr><td style="text-align:left"></td><td></td></tr>
+<tr><td style="text-align:left">asset5</td><td>0.072<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td>(0.003)</td></tr>
+<tr><td style="text-align:left"></td><td></td></tr>
+<tr><td style="text-align:left">roa</td><td>-0.004</td></tr>
+<tr><td style="text-align:left"></td><td>(0.004)</td></tr>
+<tr><td style="text-align:left"></td><td></td></tr>
+<tr><td style="text-align:left">intexpy</td><td>-0.018</td></tr>
+<tr><td style="text-align:left"></td><td>(0.013)</td></tr>
+<tr><td style="text-align:left"></td><td></td></tr>
+<tr><td style="text-align:left">ntlnlsr</td><td>0.014</td></tr>
+<tr><td style="text-align:left"></td><td>(0.011)</td></tr>
+<tr><td style="text-align:left"></td><td></td></tr>
+<tr><td style="text-align:left">rbc1rwaj</td><td>0.0001</td></tr>
+<tr><td style="text-align:left"></td><td>(0.001)</td></tr>
+<tr><td style="text-align:left"></td><td></td></tr>
+<tr><td style="text-align:left">iserchg</td><td>-0.00000</td></tr>
+<tr><td style="text-align:left"></td><td>(0.00000)</td></tr>
+<tr><td style="text-align:left"></td><td></td></tr>
+<tr><td style="text-align:left">taxes_over_rev_x</td><td>-0.185</td></tr>
+<tr><td style="text-align:left"></td><td>(0.133)</td></tr>
+<tr><td style="text-align:left"></td><td></td></tr>
+<tr><td style="text-align:left">home_eq</td><td>0.408<sup>*</sup></td></tr>
+<tr><td style="text-align:left"></td><td>(0.226)</td></tr>
+<tr><td style="text-align:left"></td><td></td></tr>
+<tr><td style="text-align:left">first_lien_re</td><td>-0.046</td></tr>
+<tr><td style="text-align:left"></td><td>(0.034)</td></tr>
+<tr><td style="text-align:left"></td><td></td></tr>
+<tr><td style="text-align:left">treas_over_assets</td><td>0.316<sup>*</sup></td></tr>
+<tr><td style="text-align:left"></td><td>(0.166)</td></tr>
+<tr><td style="text-align:left"></td><td></td></tr>
+<tr><td style="text-align:left">SB_CI_assets</td><td>0.111</td></tr>
+<tr><td style="text-align:left"></td><td>(0.104)</td></tr>
+<tr><td style="text-align:left"></td><td></td></tr>
+<tr><td style="text-align:left">credit_derivs_bene_assets</td><td>-5.585<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td>(0.841)</td></tr>
+<tr><td style="text-align:left"></td><td></td></tr>
+<tr><td style="text-align:left">credit_derivs_guarantor_assets</td><td>6.573<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td>(1.002)</td></tr>
+<tr><td style="text-align:left"></td><td></td></tr>
+<tr><td style="text-align:left">securities_assets</td><td>-0.075<sup>*</sup></td></tr>
+<tr><td style="text-align:left"></td><td>(0.044)</td></tr>
+<tr><td style="text-align:left"></td><td></td></tr>
+<tr><td style="text-align:left">Constant</td><td>-0.855<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td>(0.058)</td></tr>
+<tr><td style="text-align:left"></td><td></td></tr>
+<tr><td colspan="2" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Observations</td><td>2,102</td></tr>
+<tr><td style="text-align:left">R<sup>2</sup></td><td>0.328</td></tr>
+<tr><td style="text-align:left">Adjusted R<sup>2</sup></td><td>0.322</td></tr>
+<tr><td style="text-align:left">Residual Std. Error</td><td>0.206 (df = 2085)</td></tr>
+<tr><td style="text-align:left">F Statistic</td><td>63.468<sup>***</sup> (df = 16; 2085)</td></tr>
+<tr><td colspan="2" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"><em>Note:</em></td><td style="text-align:right"><sup>*</sup>p<0.1; <sup>**</sup>p<0.05; <sup>***</sup>p<0.01</td></tr>
+</table>
+</div>
+</div>
 
+<div id="outline-container-orgac31162" class="outline-3">
+<h3 id="orgac31162"><span class="section-number-3">4.3</span> Excluding Credit Default Swaps</h3>
+<div class="outline-text-3" id="text-4-3">
 
-<pre class="example" id="org0c7a1a9">
-
-&gt;&gt;&gt; &gt;&gt;&gt; &lt;class 'pandas.core.frame.DataFrame'&gt;
-Int64Index: 5967 entries, 1000052 to 999935
-Data columns (total 3 columns):
- #   Column  Non-Null Count  Dtype  
----  ------  --------------  -----  
- 0   nim     5967 non-null   float64
- 1   asset5  5967 non-null   float64
- 2   roa     5967 non-null   float64
-dtypes: float64(3)
-memory usage: 315.5 KB
-array([ 6.08003420e-08, -1.27424821e-09,  1.76338988e-04])
-</pre>
-
-
-<pre class="example" id="org8a2237b">
-
-Parsed with column specification:
-cols(
-  rssd = [32mcol_double()[39m,
-  intincy = [32mcol_double()[39m,
-  nim = [32mcol_double()[39m,
-  asset5 = [32mcol_double()[39m,
-  roa = [32mcol_double()[39m,
-  intexpy = [32mcol_double()[39m,
-  ntlnlsr = [32mcol_double()[39m,
-  LNLSNTV = [33mcol_logical()[39m,
-  rbc1rwaj = [32mcol_double()[39m,
-  iserchg = [32mcol_double()[39m,
-  per_change = [32mcol_double()[39m,
-  taxes_over_rev_x = [32mcol_double()[39m,
-  home_eq = [32mcol_double()[39m,
-  first_lien_re = [32mcol_double()[39m,
-  treas_over_assets = [32mcol_double()[39m,
-  SB_CI_assets = [32mcol_double()[39m,
-  credit_derivs_bene_assets = [32mcol_double()[39m,
-  credit_derivs_guarantor_assets = [32mcol_double()[39m,
-  securities_assets = [32mcol_double()[39m
-)
-
-Call:
-lm(formula = per_change ~ intincy
-nim
-asset5
-roa
-intexpy
-
-    ntlnlsr
-rbc1rwaj
-iserchg
-taxes_over_rev_x
-home_eq
-
-    first_lien_re
-treas_over_assets
-SB_CI_assets
-credit_derivs_bene_assets
-
-    credit_derivs_guarantor_assets
-securities_assets, data = reg_data)
-
-Residuals:
-     Min       1Q   Median       3Q      Max 
--0.95214 -0.11556 -0.03228  0.06544  0.83486 
-
-Coefficients:
-                                 Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)                    -8.545e-01  5.804e-02 -14.724  &lt; 2e-16 ***
-intincy                         8.355e-03  5.032e-03   1.660   0.0970 .  
-nim                            -9.406e-10  4.595e-09  -0.205   0.8378    
-asset5                          7.154e-02  3.278e-03  21.824  &lt; 2e-16 ***
-roa                            -4.087e-03  4.351e-03  -0.939   0.3478    
-intexpy                        -1.825e-02  1.250e-02  -1.460   0.1445    
-ntlnlsr                         1.408e-02  1.126e-02   1.251   0.2111    
-rbc1rwaj                        6.884e-05  6.830e-04   0.101   0.9197    
-iserchg                        -2.570e-08  4.013e-08  -0.640   0.5220    
-taxes_over_rev_x               -1.854e-01  1.332e-01  -1.392   0.1641    
-home_eq                         4.082e-01  2.260e-01   1.806   0.0711 .  
-first_lien_re                  -4.580e-02  3.385e-02  -1.353   0.1762    
-treas_over_assets               3.158e-01  1.661e-01   1.901   0.0575 .  
-SB_CI_assets                    1.109e-01  1.037e-01   1.069   0.2851    
-credit_derivs_bene_assets      -5.585e+00  8.411e-01  -6.640 3.99e-11 ***
-credit_derivs_guarantor_assets  6.573e+00  1.002e+00   6.558 6.86e-11 ***
-securities_assets              -7.467e-02  4.413e-02  -1.692   0.0908 .  
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-Residual standard error: 0.2065 on 2085 degrees of freedom
-  (3865 observations deleted due to missingness)
-Multiple R-squared:  0.3275,	Adjusted R-squared:  0.3224 
-F-statistic: 63.47 on 16 and 2085 DF,  p-value: &lt; 2.2e-16
-</pre>
+<table style="text-align:center"><tr><td colspan="2" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"></td><td><em>Dependent variable:</em></td></tr>
+<tr><td></td><td colspan="1" style="border-bottom: 1px solid black"></td></tr>
+<tr><td style="text-align:left"></td><td>per_change</td></tr>
+<tr><td colspan="2" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">intincy</td><td>0.012<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td>(0.002)</td></tr>
+<tr><td style="text-align:left"></td><td></td></tr>
+<tr><td style="text-align:left">nim</td><td>0.000<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td>(0.000)</td></tr>
+<tr><td style="text-align:left"></td><td></td></tr>
+<tr><td style="text-align:left">asset5</td><td>0.058<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td>(0.002)</td></tr>
+<tr><td style="text-align:left"></td><td></td></tr>
+<tr><td style="text-align:left">roa</td><td>0.0001</td></tr>
+<tr><td style="text-align:left"></td><td>(0.0003)</td></tr>
+<tr><td style="text-align:left"></td><td></td></tr>
+<tr><td style="text-align:left">intexpy</td><td>-0.015<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td>(0.005)</td></tr>
+<tr><td style="text-align:left"></td><td></td></tr>
+<tr><td style="text-align:left">ntlnlsr</td><td>0.003</td></tr>
+<tr><td style="text-align:left"></td><td>(0.005)</td></tr>
+<tr><td style="text-align:left"></td><td></td></tr>
+<tr><td style="text-align:left">rbc1rwaj</td><td>0.0005<sup>*</sup></td></tr>
+<tr><td style="text-align:left"></td><td>(0.0003)</td></tr>
+<tr><td style="text-align:left"></td><td></td></tr>
+<tr><td style="text-align:left">iserchg</td><td>-0.00000<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td>(0.00000)</td></tr>
+<tr><td style="text-align:left"></td><td></td></tr>
+<tr><td style="text-align:left">taxes_over_rev_x</td><td>-0.158<sup>**</sup></td></tr>
+<tr><td style="text-align:left"></td><td>(0.066)</td></tr>
+<tr><td style="text-align:left"></td><td></td></tr>
+<tr><td style="text-align:left">home_eq</td><td>-0.004</td></tr>
+<tr><td style="text-align:left"></td><td>(0.084)</td></tr>
+<tr><td style="text-align:left"></td><td></td></tr>
+<tr><td style="text-align:left">first_lien_re</td><td>-0.008</td></tr>
+<tr><td style="text-align:left"></td><td>(0.015)</td></tr>
+<tr><td style="text-align:left"></td><td></td></tr>
+<tr><td style="text-align:left">treas_over_assets</td><td>0.077</td></tr>
+<tr><td style="text-align:left"></td><td>(0.065)</td></tr>
+<tr><td style="text-align:left"></td><td></td></tr>
+<tr><td style="text-align:left">SB_CI_assets</td><td>0.089<sup>*</sup></td></tr>
+<tr><td style="text-align:left"></td><td>(0.047)</td></tr>
+<tr><td style="text-align:left"></td><td></td></tr>
+<tr><td style="text-align:left">securities_assets</td><td>-0.032<sup>*</sup></td></tr>
+<tr><td style="text-align:left"></td><td>(0.019)</td></tr>
+<tr><td style="text-align:left"></td><td></td></tr>
+<tr><td style="text-align:left">Constant</td><td>-0.715<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td>(0.026)</td></tr>
+<tr><td style="text-align:left"></td><td></td></tr>
+<tr><td colspan="2" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Observations</td><td>5,967</td></tr>
+<tr><td style="text-align:left">R<sup>2</sup></td><td>0.293</td></tr>
+<tr><td style="text-align:left">Adjusted R<sup>2</sup></td><td>0.292</td></tr>
+<tr><td style="text-align:left">Residual Std. Error</td><td>0.154 (df = 5952)</td></tr>
+<tr><td style="text-align:left">F Statistic</td><td>176.369<sup>***</sup> (df = 14; 5952)</td></tr>
+<tr><td colspan="2" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"><em>Note:</em></td><td style="text-align:right"><sup>*</sup>p<0.1; <sup>**</sup>p<0.05; <sup>***</sup>p<0.01</td></tr>
+</table>
 </div>
 </div>
 </div>
 
 
-<div id="outline-container-orgc8d9746" class="outline-2">
-<h2 id="orgc8d9746"><span class="section-number-2">5</span> Variables Available in Panel</h2>
+
+<div id="outline-container-org97f155b" class="outline-2">
+<h2 id="org97f155b"><span class="section-number-2">5</span> Variables Available in Panel</h2>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Matt Brigida</p>
-<p class="date">Created: 2021-04-05 Mon 20:48</p>
+<p class="date">Created: 2021-04-06 Tue 09:53</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
