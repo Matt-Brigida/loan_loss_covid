@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-04-05 Mon 15:01 -->
+<!-- 2021-04-05 Mon 20:48 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Loan-Loss Provisioning During COVID-19</title>
@@ -40,7 +40,7 @@
   }
   pre.src {
     position: relative;
-    overflow: visible;
+    overflow: auto;
     padding-top: 1.2em;
   }
   pre.src:before {
@@ -52,7 +52,7 @@
     padding: 3px;
     border: 1px solid black;
   }
-  pre.src:hover:before { display: inline;}
+  pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
@@ -161,6 +161,19 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -187,50 +200,26 @@
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
 <script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2017 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
 <!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
 </script>
 </head>
 <body>
@@ -240,27 +229,27 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org22ba1fe">1. Data</a></li>
-<li><a href="#org771bbf7">2. Charts</a>
+<li><a href="#org6a9b982">1. Data</a></li>
+<li><a href="#orgacb2ce0">2. Charts</a>
 <ul>
-<li><a href="#orgd32e9bc">2.1. Total Loan Losses per Quarter</a></li>
-<li><a href="#orga8cac25">2.2. Securities Gains/Losses by Quarter</a></li>
-<li><a href="#org95b7486">2.3. Income Taxes by Quarter</a></li>
+<li><a href="#orgd3c5b64">2.1. Total Loan Losses per Quarter</a></li>
+<li><a href="#org5cdea02">2.2. Securities Gains/Losses by Quarter</a></li>
+<li><a href="#org041d6ec">2.3. Income Taxes by Quarter</a></li>
 </ul>
 </li>
-<li><a href="#orge9941b6">3. Is There a Correlation Between Taxes and Loan Loss Reserve Increases</a>
+<li><a href="#org1ac389a">3. Is There a Correlation Between Taxes and Loan Loss Reserve Increases</a>
 <ul>
-<li><a href="#org0a5c03e">3.1. All Banks</a></li>
-<li><a href="#org0281bec">3.2. Small Banks (&lt; $500 million)</a></li>
-<li><a href="#org13b3e67">3.3. Large Banks (&gt; $500 million)</a></li>
+<li><a href="#orgea3c067">3.1. All Banks</a></li>
+<li><a href="#orgb5fc697">3.2. Small Banks (&lt; $500 million)</a></li>
+<li><a href="#org107d5ac">3.3. Large Banks (&gt; $500 million)</a></li>
 </ul>
 </li>
-<li><a href="#orgb97a960">4. Cross-Sectional Regression</a>
+<li><a href="#org3f1f107">4. Cross-Sectional Regression</a>
 <ul>
-<li><a href="#org2511c15">4.1. Variables in Regression</a></li>
+<li><a href="#org751dbda">4.1. Variables in Regression</a></li>
 </ul>
 </li>
-<li><a href="#orgcdcd80c">5. Variables Available in Panel</a></li>
+<li><a href="#orgc8d9746">5. Variables Available in Panel</a></li>
 </ul>
 </div>
 </div>
@@ -276,8 +265,8 @@ Changes to this <i>contra-asset</i> account are recorded in the income statement
 Due to the effect on income, loan loss reserves have a long history of being used for earnings smoothing and tax mitigation strategy.
 </p>
 
-<div id="outline-container-org22ba1fe" class="outline-2">
-<h2 id="org22ba1fe"><span class="section-number-2">1</span> Data</h2>
+<div id="outline-container-org6a9b982" class="outline-2">
+<h2 id="org6a9b982"><span class="section-number-2">1</span> Data</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 For all variables available in the data set, see the list below.  Variables are listed by their FDIC codes, <a href="https://www7.fdic.gov/sdi/main.asp">which are available here.</a>
@@ -286,15 +275,15 @@ For all variables available in the data set, see the list below.  Variables are 
 </div>
 
 
-<div id="outline-container-org771bbf7" class="outline-2">
-<h2 id="org771bbf7"><span class="section-number-2">2</span> Charts</h2>
+<div id="outline-container-orgacb2ce0" class="outline-2">
+<h2 id="orgacb2ce0"><span class="section-number-2">2</span> Charts</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-orgd32e9bc" class="outline-3">
-<h3 id="orgd32e9bc"><span class="section-number-3">2.1</span> Total Loan Losses per Quarter</h3>
+<div id="outline-container-orgd3c5b64" class="outline-3">
+<h3 id="orgd3c5b64"><span class="section-number-3">2.1</span> Total Loan Losses per Quarter</h3>
 <div class="outline-text-3" id="text-2-1">
 
-<div id="org3ad3339" class="figure">
+<div id="org1764cb3" class="figure">
 <p><img src="./total_quarterly_loan_losses_py.png" alt="total_quarterly_loan_losses_py.png" />
 </p>
 <p><span class="figure-number">Figure 1: </span>Total Loan Loss Reserves by Quarter.</p>
@@ -302,11 +291,11 @@ For all variables available in the data set, see the list below.  Variables are 
 </div>
 </div>
 
-<div id="outline-container-orga8cac25" class="outline-3">
-<h3 id="orga8cac25"><span class="section-number-3">2.2</span> Securities Gains/Losses by Quarter</h3>
+<div id="outline-container-org5cdea02" class="outline-3">
+<h3 id="org5cdea02"><span class="section-number-3">2.2</span> Securities Gains/Losses by Quarter</h3>
 <div class="outline-text-3" id="text-2-2">
 
-<div id="org73f9759" class="figure">
+<div id="orge7b0e5b" class="figure">
 <p><img src="./tot_sec_gains_by_quarter.png" alt="tot_sec_gains_by_quarter.png" />
 </p>
 <p><span class="figure-number">Figure 2: </span>Total Securities Gains and Losses by Quarter.</p>
@@ -314,11 +303,11 @@ For all variables available in the data set, see the list below.  Variables are 
 </div>
 </div>
 
-<div id="outline-container-org95b7486" class="outline-3">
-<h3 id="org95b7486"><span class="section-number-3">2.3</span> Income Taxes by Quarter</h3>
+<div id="outline-container-org041d6ec" class="outline-3">
+<h3 id="org041d6ec"><span class="section-number-3">2.3</span> Income Taxes by Quarter</h3>
 <div class="outline-text-3" id="text-2-3">
 
-<div id="org29668cd" class="figure">
+<div id="orge6e7afc" class="figure">
 <p><img src="./inc_tax_gains_by_quarter.png" alt="inc_tax_gains_by_quarter.png" />
 </p>
 <p><span class="figure-number">Figure 3: </span>Total Income Taxes by Quarter.</p>
@@ -328,8 +317,8 @@ For all variables available in the data set, see the list below.  Variables are 
 </div>
 
 
-<div id="outline-container-orge9941b6" class="outline-2">
-<h2 id="orge9941b6"><span class="section-number-2">3</span> Is There a Correlation Between Taxes and Loan Loss Reserve Increases</h2>
+<div id="outline-container-org1ac389a" class="outline-2">
+<h2 id="org1ac389a"><span class="section-number-2">3</span> Is There a Correlation Between Taxes and Loan Loss Reserve Increases</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Here we take a look at whether banks with higher taxes paid as a percent of revenue in Q4 2019 increased their loan losses at a faster rate from Q4 2019 to Q3 2020.  We remove any bank with negative taxes, or percent change in loan losses not in the interval (-1, 1).
@@ -350,92 +339,68 @@ So redo the analysis below filtering for only banks with less than $500 million 
 </p>
 </div>
 
-<div id="outline-container-org0a5c03e" class="outline-3">
-<h3 id="org0a5c03e"><span class="section-number-3">3.1</span> All Banks</h3>
+<div id="outline-container-orgea3c067" class="outline-3">
+<h3 id="orgea3c067"><span class="section-number-3">3.1</span> All Banks</h3>
 <div class="outline-text-3" id="text-3-1">
-<pre class="example">
-
-&gt;&gt;&gt; &gt;&gt;&gt; &gt;&gt;&gt; &gt;&gt;&gt; &gt;&gt;&gt; &gt;&gt;&gt;                 taxes_over_rev  per_change
-taxes_over_rev        1.000000    0.131245
-per_change            0.131245    1.000000
-
-</pre>
-
 <p>
 So we see a positive correlation of 0.13 between taxes and the change in loan loss reserves.
 </p>
 
 
-<div class="figure">
+<div id="org630d079" class="figure">
 <p><img src="./scatter_losses_taxes.png" alt="scatter_losses_taxes.png" />
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org0281bec" class="outline-3">
-<h3 id="org0281bec"><span class="section-number-3">3.2</span> Small Banks (&lt; $500 million)</h3>
+<div id="outline-container-orgb5fc697" class="outline-3">
+<h3 id="orgb5fc697"><span class="section-number-3">3.2</span> Small Banks (&lt; $500 million)</h3>
 <div class="outline-text-3" id="text-3-2">
-<pre class="example">
-
-&gt;&gt;&gt; &gt;&gt;&gt; &gt;&gt;&gt; &gt;&gt;&gt; &gt;&gt;&gt; &gt;&gt;&gt;                 taxes_over_rev  per_change
-taxes_over_rev        1.000000   -0.000141
-per_change           -0.000141    1.000000
-
-</pre>
 </div>
 </div>
 
 
-<div id="outline-container-org13b3e67" class="outline-3">
-<h3 id="org13b3e67"><span class="section-number-3">3.3</span> Large Banks (&gt; $500 million)</h3>
+<div id="outline-container-org107d5ac" class="outline-3">
+<h3 id="org107d5ac"><span class="section-number-3">3.3</span> Large Banks (&gt; $500 million)</h3>
 <div class="outline-text-3" id="text-3-3">
-<pre class="example">
-
-&gt;&gt;&gt; &gt;&gt;&gt; &gt;&gt;&gt; &gt;&gt;&gt; &gt;&gt;&gt; &gt;&gt;&gt;                 taxes_over_rev  per_change
-taxes_over_rev        1.000000    0.114114
-per_change            0.114114    1.000000
-
-</pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgb97a960" class="outline-2">
-<h2 id="orgb97a960"><span class="section-number-2">4</span> Cross-Sectional Regression</h2>
+<div id="outline-container-org3f1f107" class="outline-2">
+<h2 id="org3f1f107"><span class="section-number-2">4</span> Cross-Sectional Regression</h2>
 <div class="outline-text-2" id="text-4">
 <pre class="example">
-
-&gt;&gt;&gt; &gt;&gt;&gt; &gt;&gt;&gt; &gt;&gt;&gt; &lt;class 'pandas.core.frame.DataFrame'&gt;
+&lt;class 'pandas.core.frame.DataFrame'&gt;
 Int64Index: 5967 entries, 1000052 to 999935
 Columns: 101 entries, cert to first_lien_re
 dtypes: datetime64[ns](1), float64(84), int64(9), object(7)
 memory usage: 4.6+ MB
-
 </pre>
 </div>
 
 
-<div id="outline-container-org2511c15" class="outline-3">
-<h3 id="org2511c15"><span class="section-number-3">4.1</span> Variables in Regression</h3>
+<div id="outline-container-org751dbda" class="outline-3">
+<h3 id="org751dbda"><span class="section-number-3">4.1</span> Variables in Regression</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 Should add log of loan losses and net charge offs to assets, as well as variables from panel rebuild.
 </p>
 
 <pre class="example">
-
-&gt;&gt;&gt; &gt;&gt;&gt; &lt;stdin&gt;:1: SettingWithCopyWarning: 
+/tmp/babel-u8vDsg/python-4WGOem:4: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-
+  X['asset5'] = np.log(X['asset5'])
 </pre>
 
 
 
-<pre class="example">
+
+<pre class="example" id="org0c7a1a9">
 
 &gt;&gt;&gt; &gt;&gt;&gt; &lt;class 'pandas.core.frame.DataFrame'&gt;
 Int64Index: 5967 entries, 1000052 to 999935
@@ -451,14 +416,30 @@ array([ 6.08003420e-08, -1.27424821e-09,  1.76338988e-04])
 </pre>
 
 
-<pre class="example">
+<pre class="example" id="org8a2237b">
 
 Parsed with column specification:
 cols(
-  .default = col_double(),
-  LNLSNTV = [33mcol_logical()[39m
+  rssd = [32mcol_double()[39m,
+  intincy = [32mcol_double()[39m,
+  nim = [32mcol_double()[39m,
+  asset5 = [32mcol_double()[39m,
+  roa = [32mcol_double()[39m,
+  intexpy = [32mcol_double()[39m,
+  ntlnlsr = [32mcol_double()[39m,
+  LNLSNTV = [33mcol_logical()[39m,
+  rbc1rwaj = [32mcol_double()[39m,
+  iserchg = [32mcol_double()[39m,
+  per_change = [32mcol_double()[39m,
+  taxes_over_rev_x = [32mcol_double()[39m,
+  home_eq = [32mcol_double()[39m,
+  first_lien_re = [32mcol_double()[39m,
+  treas_over_assets = [32mcol_double()[39m,
+  SB_CI_assets = [32mcol_double()[39m,
+  credit_derivs_bene_assets = [32mcol_double()[39m,
+  credit_derivs_guarantor_assets = [32mcol_double()[39m,
+  securities_assets = [32mcol_double()[39m
 )
-See spec(...) for full column specifications.
 
 Call:
 lm(formula = per_change ~ intincy
@@ -479,163 +460,52 @@ SB_CI_assets
 credit_derivs_bene_assets
 
     credit_derivs_guarantor_assets
-charge_offs_assets
-securities_assets, 
-    data = reg_data)
+securities_assets, data = reg_data)
 
 Residuals:
      Min       1Q   Median       3Q      Max 
--0.94881 -0.11703 -0.03322  0.06436  0.83203 
+-0.95214 -0.11556 -0.03228  0.06544  0.83486 
 
 Coefficients:
                                  Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)                    -8.623e-01  5.818e-02 -14.823  &lt; 2e-16 ***
-intincy                         1.002e-02  5.118e-03   1.958   0.0503 .  
-nim                            -1.513e-10  4.614e-09  -0.033   0.9738    
-asset5                          7.162e-02  3.277e-03  21.857  &lt; 2e-16 ***
-roa                            -3.998e-03  4.349e-03  -0.919   0.3581    
-intexpy                        -1.791e-02  1.250e-02  -1.433   0.1520    
-ntlnlsr                         6.543e-02  3.122e-02   2.095   0.0362 *  
-rbc1rwaj                        3.438e-05  6.829e-04   0.050   0.9599    
-iserchg                        -3.212e-08  4.027e-08  -0.797   0.4253    
-taxes_over_rev_x               -1.850e-01  1.331e-01  -1.390   0.1647    
-home_eq                         4.149e-01  2.260e-01   1.836   0.0665 .  
-first_lien_re                  -4.250e-02  3.388e-02  -1.254   0.2099    
-treas_over_assets               2.745e-01  1.677e-01   1.637   0.1018    
-SB_CI_assets                    9.688e-02  1.039e-01   0.932   0.3514    
-credit_derivs_bene_assets      -5.506e+00  8.419e-01  -6.540 7.71e-11 ***
-credit_derivs_guarantor_assets  6.425e+00  1.005e+00   6.392 2.02e-10 ***
-charge_offs_assets             -5.705e+00  3.236e+00  -1.763   0.0781 .  
-securities_assets              -7.541e-02  4.411e-02  -1.710   0.0875 .  
+(Intercept)                    -8.545e-01  5.804e-02 -14.724  &lt; 2e-16 ***
+intincy                         8.355e-03  5.032e-03   1.660   0.0970 .  
+nim                            -9.406e-10  4.595e-09  -0.205   0.8378    
+asset5                          7.154e-02  3.278e-03  21.824  &lt; 2e-16 ***
+roa                            -4.087e-03  4.351e-03  -0.939   0.3478    
+intexpy                        -1.825e-02  1.250e-02  -1.460   0.1445    
+ntlnlsr                         1.408e-02  1.126e-02   1.251   0.2111    
+rbc1rwaj                        6.884e-05  6.830e-04   0.101   0.9197    
+iserchg                        -2.570e-08  4.013e-08  -0.640   0.5220    
+taxes_over_rev_x               -1.854e-01  1.332e-01  -1.392   0.1641    
+home_eq                         4.082e-01  2.260e-01   1.806   0.0711 .  
+first_lien_re                  -4.580e-02  3.385e-02  -1.353   0.1762    
+treas_over_assets               3.158e-01  1.661e-01   1.901   0.0575 .  
+SB_CI_assets                    1.109e-01  1.037e-01   1.069   0.2851    
+credit_derivs_bene_assets      -5.585e+00  8.411e-01  -6.640 3.99e-11 ***
+credit_derivs_guarantor_assets  6.573e+00  1.002e+00   6.558 6.86e-11 ***
+securities_assets              -7.467e-02  4.413e-02  -1.692   0.0908 .  
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-Residual standard error: 0.2064 on 2084 degrees of freedom
+Residual standard error: 0.2065 on 2085 degrees of freedom
   (3865 observations deleted due to missingness)
-Multiple R-squared:  0.3285,	Adjusted R-squared:  0.323 
-F-statistic: 59.98 on 17 and 2084 DF,  p-value: &lt; 2.2e-16
+Multiple R-squared:  0.3275,	Adjusted R-squared:  0.3224 
+F-statistic: 63.47 on 16 and 2085 DF,  p-value: &lt; 2.2e-16
 </pre>
 </div>
 </div>
 </div>
 
 
-<div id="outline-container-orgcdcd80c" class="outline-2">
-<h2 id="orgcdcd80c"><span class="section-number-2">5</span> Variables Available in Panel</h2>
-<div class="outline-text-2" id="text-5">
-<pre class="example">
-&lt;class 'pandas.core.frame.DataFrame'&gt;
-RangeIndex: 1584313 entries, 0 to 1584312
-Data columns (total 97 columns):
- #   Column           Non-Null Count    Dtype         
----  ------           --------------    -----         
- 0   rssd             1584313 non-null  int64         
- 1   cert             1584313 non-null  int64         
- 2   quarter          1584313 non-null  datetime64[ns]
- 3   asset            1584313 non-null  float64       
- 4   asset2           1584313 non-null  float64       
- 5   asset5           1584313 non-null  float64       
- 6   eq               1581992 non-null  float64       
- 7   intinc           1581992 non-null  float64       
- 8   eintexp          1581992 non-null  float64       
- 9   nonii            1581992 non-null  float64       
- 10  idothnii         1584313 non-null  int64         
- 11  nonix            1581992 non-null  float64       
- 12  epremagg         1581992 non-null  float64       
- 13  IDEOTH           1583178 non-null  float64       
- 14  idpretx          1584313 non-null  int64         
- 15  iglsec           1581992 non-null  float64       
- 16  itax             1581992 non-null  float64       
- 17  ibefxtr          1581992 non-null  float64       
- 18  extra            1581992 non-null  float64       
- 19  netinc           1581992 non-null  float64       
- 20  eqcdiv           1581992 non-null  float64       
- 21  ILNFOR           34684 non-null    float64       
- 22  EDEPFOR          34684 non-null    float64       
- 23  dep              1584311 non-null  float64       
- 24  lnreres          1582640 non-null  float64       
- 25  LNRERSFM         1458237 non-null  float64       
- 26  LNRERSF2         1458237 non-null  float64       
- 27  lnreloc          1582640 non-null  float64       
- 28  LNRERSF1         1389061 non-null  float64       
- 29  obsdir           1390777 non-null  float64       
- 30  intincy          1581924 non-null  float64       
- 31  intexpy          1581924 non-null  float64       
- 32  nimy             1581924 non-null  float64       
- 33  noniiay          1581992 non-null  float64       
- 34  nonixay          1581992 non-null  float64       
- 35  ELNATRY          0 non-null        float64       
- 36  noijy            1581992 non-null  float64       
- 37  roa              1581992 non-null  float64       
- 38  roaptx           1581992 non-null  float64       
- 39  roe              1581992 non-null  float64       
- 40  ntlnlsr          1570725 non-null  float64       
- 41  elnantr          1377260 non-null  float64       
- 42  iderncvr         1091500 non-null  float64       
- 43  eeffr            1581671 non-null  float64       
- 44  astempm          1579021 non-null  float64       
- 45  ERNASTR          0 non-null        float64       
- 46  lnatresr         1569966 non-null  float64       
- 47  lnresncr         1438828 non-null  float64       
- 48  nperfv           1581990 non-null  float64       
- 49  nclnlsr          1572278 non-null  float64       
- 50  LNLSNTV          0 non-null        float64       
- 51  lnlsdepr         1583122 non-null  float64       
- 52  idlncorr         1576590 non-null  float64       
- 53  DEPDASTR         0 non-null        float64       
- 54  eqv              1581992 non-null  float64       
- 55  rbc1aaj          1581990 non-null  float64       
- 56  rbc1rwaj         1549826 non-null  float64       
- 57  rbcrwaj          1571274 non-null  float64       
- 58  RBCT1CER         0 non-null        float64       
- 59  nim              1581992 non-null  float64       
- 60  ifiduc           1074049 non-null  float64       
- 61  iserchg          1397165 non-null  float64       
- 62  igltrad          1179267 non-null  float64       
- 63  esal             1581992 non-null  float64       
- 64  ntlnls           1581992 non-null  float64       
- 65  noij             1581992 non-null  float64       
- 66  eqcrest          1230158 non-null  float64       
- 67  rslnltot         1581992 non-null  float64       
- 68  drlnls           1581992 non-null  float64       
- 69  lnatres          1581990 non-null  float64       
- 70  lnlsnet          1584311 non-null  float64       
- 71  scus             1584311 non-null  float64       
- 72  scust            1436021 non-null  float64       
- 73  Lnrenr1          635991 non-null   float64       
- 74  Lnci4            635990 non-null   float64       
- 75  Lnreag4          635991 non-null   float64       
- 76  Lnag4            635991 non-null   float64       
- 77  sc               1584311 non-null  float64       
- 78  idctder          1584313 non-null  float64       
- 79  ctdergty         1031820 non-null  float64       
- 80  ctderben         1031820 non-null  float64       
- 81  rt               1390920 non-null  float64       
- 82  theindex_panel   1584313 non-null  object        
- 83  born_vector      1584313 non-null  int64         
- 84  de_novo          1584313 non-null  int64         
- 85  fin_crisis_ind   1584313 non-null  int64         
- 86  post_crisis_ind  1584313 non-null  int64         
- 87  fail_date        110833 non-null   object        
- 88  fail_indicator   1584313 non-null  int64         
- 89  days_to_failure  110833 non-null   float64       
- 90  stalp            1584313 non-null  object        
- 91  cbsa_metro       984982 non-null   float64       
- 92  zip              1584313 non-null  int64         
- 93  cbsa_metro_name  984982 non-null   object        
- 94  regagnt          1584313 non-null  object        
- 95  fdicdbs          1584313 non-null  object        
- 96  fed              1584313 non-null  object        
-dtypes: datetime64[ns](1), float64(79), int64(10), object(7)
-memory usage: 1.1+ GB
-</pre>
-</div>
+<div id="outline-container-orgc8d9746" class="outline-2">
+<h2 id="orgc8d9746"><span class="section-number-2">5</span> Variables Available in Panel</h2>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Matt Brigida</p>
-<p class="date">Created: 2021-04-05 Mon 15:01</p>
-<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2021-04-05 Mon 20:48</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
 </html>
