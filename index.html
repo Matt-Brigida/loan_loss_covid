@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-04-08 Thu 16:15 -->
+<!-- 2021-04-09 Fri 18:19 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Loan-Loss Provisioning During COVID-19</title>
@@ -229,36 +229,37 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org7bbc478">1. Data</a></li>
-<li><a href="#orgc6fac74">2. Charts</a>
+<li><a href="#orgd60b38c">1. Data</a></li>
+<li><a href="#org3862eaf">2. Charts</a>
 <ul>
-<li><a href="#org2a40b2a">2.1. Total Loan Losses per Quarter</a></li>
-<li><a href="#orgf26238d">2.2. Securities Gains/Losses by Quarter</a></li>
-<li><a href="#org0933b2e">2.3. Income Taxes by Quarter</a></li>
+<li><a href="#orgb3ec173">2.1. Total Loan Losses per Quarter</a></li>
+<li><a href="#orgc1e3fba">2.2. Securities Gains/Losses by Quarter</a></li>
+<li><a href="#org344611c">2.3. Income Taxes by Quarter</a></li>
 </ul>
 </li>
-<li><a href="#orgfd34f75">3. Is There a Correlation Between Taxes and Loan Loss Reserve Increases</a>
+<li><a href="#orgbefa81c">3. Is There a Correlation Between Taxes and Loan Loss Reserve Increases</a>
 <ul>
-<li><a href="#orgb74143c">3.1. All Banks</a></li>
-<li><a href="#org5dc90bf">3.2. Small Banks (&lt; $500 million)</a></li>
-<li><a href="#orgdcab41d">3.3. Large Banks (&gt; $500 million)</a></li>
+<li><a href="#org348d928">3.1. All Banks</a></li>
+<li><a href="#orgaf95b30">3.2. Small Banks (&lt; $500 million)</a></li>
+<li><a href="#org2db5d7d">3.3. Large Banks (&gt; $500 million)</a></li>
 </ul>
 </li>
-<li><a href="#orgc06e48a">4. Cross-Sectional Regression</a>
+<li><a href="#org5356995">4. Cross-Sectional Regression</a>
 <ul>
-<li><a href="#org2df4d4c">4.1. Variables in Regression</a></li>
+<li><a href="#org6f37285">4.1. Variables in Regression</a></li>
 </ul>
 </li>
-<li><a href="#orgc01eb0c">5. Descriptive Statistics</a>
+<li><a href="#orge40ba78">5. Descriptive Statistics</a>
 <ul>
-<li><a href="#orge6af4ff">5.1. Including Credit Default Swaps</a></li>
-<li><a href="#orga1ff254">5.2. Including <b>Net</b> Credit Default Swaps</a></li>
-<li><a href="#orgac3089f">5.3. Excluding Credit Default Swaps</a></li>
+<li><a href="#org93d1810">5.1. Including <b>Net</b> Credit Default Swaps</a></li>
+<li><a href="#org3c88686">5.2. Including Credit Default Swaps by Side</a></li>
+<li><a href="#org57fe185">5.3. Excluding Credit Default Swaps</a></li>
 </ul>
 </li>
-<li><a href="#org36d5a70">6. Regression Results Table</a></li>
-<li><a href="#orgf4ae7a9">7. Variables Available in Panel</a></li>
-<li><a href="#orgc071ed6">8. Literature</a></li>
+<li><a href="#org8cd29b5">6. Regression Results Table</a></li>
+<li><a href="#org8871297">7. Variables Available in Panel</a></li>
+<li><a href="#org7191536">8. Literature</a></li>
+<li><a href="#orgae27ad3">9. Unformatted Results</a></li>
 </ul>
 </div>
 </div>
@@ -274,8 +275,8 @@ Changes to this <i>contra-asset</i> account are recorded in the income statement
 Due to the effect on income, loan loss reserves have a long history of being used for earnings smoothing and tax mitigation strategy.
 </p>
 
-<div id="outline-container-org7bbc478" class="outline-2">
-<h2 id="org7bbc478"><span class="section-number-2">1</span> Data</h2>
+<div id="outline-container-orgd60b38c" class="outline-2">
+<h2 id="orgd60b38c"><span class="section-number-2">1</span> Data</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 For all variables available in the data set, see the list below.  Variables are listed by their FDIC codes, <a href="https://www7.fdic.gov/sdi/main.asp">which are available here.</a>
@@ -284,15 +285,15 @@ For all variables available in the data set, see the list below.  Variables are 
 </div>
 
 
-<div id="outline-container-orgc6fac74" class="outline-2">
-<h2 id="orgc6fac74"><span class="section-number-2">2</span> Charts</h2>
+<div id="outline-container-org3862eaf" class="outline-2">
+<h2 id="org3862eaf"><span class="section-number-2">2</span> Charts</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org2a40b2a" class="outline-3">
-<h3 id="org2a40b2a"><span class="section-number-3">2.1</span> Total Loan Losses per Quarter</h3>
+<div id="outline-container-orgb3ec173" class="outline-3">
+<h3 id="orgb3ec173"><span class="section-number-3">2.1</span> Total Loan Losses per Quarter</h3>
 <div class="outline-text-3" id="text-2-1">
 
-<div id="org0f1094f" class="figure">
+<div id="org724e96f" class="figure">
 <p><img src="./total_quarterly_loan_losses_py.png" alt="total_quarterly_loan_losses_py.png" />
 </p>
 <p><span class="figure-number">Figure 1: </span>Total Loan Loss Reserves by Quarter.</p>
@@ -300,11 +301,11 @@ For all variables available in the data set, see the list below.  Variables are 
 </div>
 </div>
 
-<div id="outline-container-orgf26238d" class="outline-3">
-<h3 id="orgf26238d"><span class="section-number-3">2.2</span> Securities Gains/Losses by Quarter</h3>
+<div id="outline-container-orgc1e3fba" class="outline-3">
+<h3 id="orgc1e3fba"><span class="section-number-3">2.2</span> Securities Gains/Losses by Quarter</h3>
 <div class="outline-text-3" id="text-2-2">
 
-<div id="orgd343be3" class="figure">
+<div id="org7f3e2a5" class="figure">
 <p><img src="./tot_sec_gains_by_quarter.png" alt="tot_sec_gains_by_quarter.png" />
 </p>
 <p><span class="figure-number">Figure 2: </span>Total Securities Gains and Losses by Quarter.</p>
@@ -312,11 +313,11 @@ For all variables available in the data set, see the list below.  Variables are 
 </div>
 </div>
 
-<div id="outline-container-org0933b2e" class="outline-3">
-<h3 id="org0933b2e"><span class="section-number-3">2.3</span> Income Taxes by Quarter</h3>
+<div id="outline-container-org344611c" class="outline-3">
+<h3 id="org344611c"><span class="section-number-3">2.3</span> Income Taxes by Quarter</h3>
 <div class="outline-text-3" id="text-2-3">
 
-<div id="orga9e7b05" class="figure">
+<div id="orgce5d9d3" class="figure">
 <p><img src="./inc_tax_gains_by_quarter.png" alt="inc_tax_gains_by_quarter.png" />
 </p>
 <p><span class="figure-number">Figure 3: </span>Total Income Taxes by Quarter.</p>
@@ -326,8 +327,8 @@ For all variables available in the data set, see the list below.  Variables are 
 </div>
 
 
-<div id="outline-container-orgfd34f75" class="outline-2">
-<h2 id="orgfd34f75"><span class="section-number-2">3</span> Is There a Correlation Between Taxes and Loan Loss Reserve Increases</h2>
+<div id="outline-container-orgbefa81c" class="outline-2">
+<h2 id="orgbefa81c"><span class="section-number-2">3</span> Is There a Correlation Between Taxes and Loan Loss Reserve Increases</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Here we take a look at whether banks with higher taxes paid as a percent of revenue in Q4 2019 increased their loan losses at a faster rate from Q4 2019 to Q3 2020.  We remove any bank with negative taxes, or percent change in loan losses not in the interval (-1, 1).
@@ -348,37 +349,37 @@ So redo the analysis below filtering for only banks with less than $500 million 
 </p>
 </div>
 
-<div id="outline-container-orgb74143c" class="outline-3">
-<h3 id="orgb74143c"><span class="section-number-3">3.1</span> All Banks</h3>
+<div id="outline-container-org348d928" class="outline-3">
+<h3 id="org348d928"><span class="section-number-3">3.1</span> All Banks</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 So we see a positive correlation of 0.13 between taxes and the change in loan loss reserves.
 </p>
 
 
-<div id="org72b28b7" class="figure">
+<div id="org17837c8" class="figure">
 <p><img src="./scatter_losses_taxes.png" alt="scatter_losses_taxes.png" />
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org5dc90bf" class="outline-3">
-<h3 id="org5dc90bf"><span class="section-number-3">3.2</span> Small Banks (&lt; $500 million)</h3>
+<div id="outline-container-orgaf95b30" class="outline-3">
+<h3 id="orgaf95b30"><span class="section-number-3">3.2</span> Small Banks (&lt; $500 million)</h3>
 <div class="outline-text-3" id="text-3-2">
 </div>
 </div>
 
 
-<div id="outline-container-orgdcab41d" class="outline-3">
-<h3 id="orgdcab41d"><span class="section-number-3">3.3</span> Large Banks (&gt; $500 million)</h3>
+<div id="outline-container-org2db5d7d" class="outline-3">
+<h3 id="org2db5d7d"><span class="section-number-3">3.3</span> Large Banks (&gt; $500 million)</h3>
 <div class="outline-text-3" id="text-3-3">
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgc06e48a" class="outline-2">
-<h2 id="orgc06e48a"><span class="section-number-2">4</span> Cross-Sectional Regression</h2>
+<div id="outline-container-org5356995" class="outline-2">
+<h2 id="org5356995"><span class="section-number-2">4</span> Cross-Sectional Regression</h2>
 <div class="outline-text-2" id="text-4">
 <pre class="example">
 &lt;class 'pandas.core.frame.DataFrame'&gt;
@@ -390,15 +391,15 @@ memory usage: 4.6+ MB
 </div>
 
 
-<div id="outline-container-org2df4d4c" class="outline-3">
-<h3 id="org2df4d4c"><span class="section-number-3">4.1</span> Variables in Regression</h3>
+<div id="outline-container-org6f37285" class="outline-3">
+<h3 id="org6f37285"><span class="section-number-3">4.1</span> Variables in Regression</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 Should add log of loan losses and net charge offs to assets, as well as variables from panel rebuild.
 </p>
 
 <pre class="example">
-/tmp/babel-I535Dy/python-eQcQYf:4: SettingWithCopyWarning: 
+/tmp/babel-0rEJSB/python-eCtmvS:4: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
@@ -409,8 +410,8 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 </div>
 
-<div id="outline-container-orgc01eb0c" class="outline-2">
-<h2 id="orgc01eb0c"><span class="section-number-2">5</span> Descriptive Statistics</h2>
+<div id="outline-container-orge40ba78" class="outline-2">
+<h2 id="orge40ba78"><span class="section-number-2">5</span> Descriptive Statistics</h2>
 <div class="outline-text-2" id="text-5">
 
 <table style="text-align:center"><caption><strong>Descriptive statistics</strong></caption>
@@ -419,7 +420,6 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 <tr><td style="text-align:left">Net Interest Margin</td><td>5,967</td><td>3.83</td><td>1.26</td><td>0.69</td><td>3.33</td><td>4.15</td><td>23.04</td></tr>
 <tr><td style="text-align:left">Total Assets</td><td>5,967</td><td>12.96</td><td>1.65</td><td>9.13</td><td>11.86</td><td>13.73</td><td>21.59</td></tr>
 <tr><td style="text-align:left">ROA</td><td>5,967</td><td>1.24</td><td>7.77</td><td>-4.05</td><td>0.72</td><td>1.38</td><td>422.88</td></tr>
-<tr><td style="text-align:left">Funding Cost</td><td>5,967</td><td>0.91</td><td>0.43</td><td>0.00</td><td>0.60</td><td>1.16</td><td>2.77</td></tr>
 <tr><td style="text-align:left">Net Charge-Offs</td><td>5,967</td><td>0.16</td><td>0.58</td><td>-2.30</td><td>0.00</td><td>0.14</td><td>11.23</td></tr>
 <tr><td style="text-align:left">T1 RBCR</td><td>5,967</td><td>17.75</td><td>9.46</td><td>8.54</td><td>12.46</td><td>19.26</td><td>142.70</td></tr>
 <tr><td style="text-align:left">Deposit Service Charges</td><td>5,967</td><td>0.002</td><td>0.002</td><td>0.00</td><td>0.001</td><td>0.002</td><td>0.05</td></tr>
@@ -429,54 +429,472 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 <tr><td style="text-align:left">Real Est. Loans</td><td>5,967</td><td>0.19</td><td>0.16</td><td>0.00</td><td>0.08</td><td>0.26</td><td>0.96</td></tr>
 <tr><td style="text-align:left">Treasuries</td><td>5,967</td><td>0.01</td><td>0.03</td><td>0.00</td><td>0.00</td><td>0.001</td><td>0.51</td></tr>
 <tr><td style="text-align:left">Small C&I Loans</td><td>5,967</td><td>0.05</td><td>0.05</td><td>0.00</td><td>0.02</td><td>0.06</td><td>0.81</td></tr>
+<tr><td style="text-align:left">Net CDS</td><td>2,102</td><td>0.0002</td><td>0.01</td><td>-0.05</td><td>0.00</td><td>0.00</td><td>0.10</td></tr>
 <tr><td style="text-align:left">Long CDS</td><td>2,102</td><td>0.004</td><td>0.04</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.67</td></tr>
 <tr><td style="text-align:left">Short CDS</td><td>2,102</td><td>0.004</td><td>0.03</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.62</td></tr>
 <tr><td style="text-align:left">Securities</td><td>5,967</td><td>0.17</td><td>0.13</td><td>0.00</td><td>0.08</td><td>0.24</td><td>0.92</td></tr>
 <tr><td colspan="8" style="border-bottom: 1px solid black"></td></tr></table>
 </div>
 
-<div id="outline-container-orge6af4ff" class="outline-3">
-<h3 id="orge6af4ff"><span class="section-number-3">5.1</span> Including Credit Default Swaps</h3>
+<div id="outline-container-org93d1810" class="outline-3">
+<h3 id="org93d1810"><span class="section-number-3">5.1</span> Including <b>Net</b> Credit Default Swaps</h3>
 <div class="outline-text-3" id="text-5-1">
+<div class="org-src-container">
+<pre class="src src-R">reg1 <span style="color: #268bd2;">&lt;-</span> lm(per_change ~ intincy + nimy + asset5 + roa + ntlnlsr + rbc1rwaj + deposit_fees + taxes_over_rev_x + home_eq + first_lien_re + treas_over_assets + SB_CI_assets + net_CDS + securities_assets, data=reg_data)
+cov1 <span style="color: #268bd2;">&lt;-</span> vcovHC(reg1, type = <span style="color: #2aa198;">"HC1"</span>)
+robust_se1 <span style="color: #268bd2;">&lt;-</span> sqrt(diag(cov1))
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-R">reg2 <span style="color: #268bd2;">&lt;-</span> lm(per_change ~ nimy + asset5 + roa + ntlnlsr + rbc1rwaj + deposit_fees + taxes_over_rev_x + home_eq + first_lien_re + treas_over_assets + SB_CI_assets + net_CDS + securities_assets, data=reg_data)
+cov2 <span style="color: #268bd2;">&lt;-</span> vcovHC(reg2, type = <span style="color: #2aa198;">"HC1"</span>)
+robust_se2 <span style="color: #268bd2;">&lt;-</span> sqrt(diag(cov2))
+</pre>
+</div>
 </div>
 </div>
 
-<div id="outline-container-orga1ff254" class="outline-3">
-<h3 id="orga1ff254"><span class="section-number-3">5.2</span> Including <b>Net</b> Credit Default Swaps</h3>
+<div id="outline-container-org3c88686" class="outline-3">
+<h3 id="org3c88686"><span class="section-number-3">5.2</span> Including Credit Default Swaps by Side</h3>
 <div class="outline-text-3" id="text-5-2">
+<div class="org-src-container">
+<pre class="src src-R">reg3 <span style="color: #268bd2;">&lt;-</span> lm(per_change ~ nimy + asset5 + roa + ntlnlsr + rbc1rwaj + deposit_fees + taxes_over_rev_x + home_eq + first_lien_re + treas_over_assets + SB_CI_assets + credit_derivs_bene_assets + credit_derivs_guarantor_assets + securities_assets, data=reg_data)
+cov3 <span style="color: #268bd2;">&lt;-</span> vcovHC(reg3, type = <span style="color: #2aa198;">"HC1"</span>)
+robust_se3 <span style="color: #268bd2;">&lt;-</span> sqrt(diag(cov3))
+</pre>
+</div>
 </div>
 </div>
 
-<div id="outline-container-orgac3089f" class="outline-3">
-<h3 id="orgac3089f"><span class="section-number-3">5.3</span> Excluding Credit Default Swaps</h3>
+<div id="outline-container-org57fe185" class="outline-3">
+<h3 id="org57fe185"><span class="section-number-3">5.3</span> Excluding Credit Default Swaps</h3>
 <div class="outline-text-3" id="text-5-3">
+<div class="org-src-container">
+<pre class="src src-R">reg4 <span style="color: #268bd2;">&lt;-</span> lm(per_change ~ intincy + nimy + asset5 + roa + ntlnlsr + rbc1rwaj + deposit_fees + taxes_over_rev_x + home_eq + first_lien_re + treas_over_assets + SB_CI_assets + securities_assets, data=reg_data)
+cov4 <span style="color: #268bd2;">&lt;-</span> vcovHC(reg4, type = <span style="color: #2aa198;">"HC1"</span>)
+robust_se4 <span style="color: #268bd2;">&lt;-</span> sqrt(diag(cov4))
+</pre>
 </div>
 </div>
 </div>
-
-<div id="outline-container-org36d5a70" class="outline-2">
-<h2 id="org36d5a70"><span class="section-number-2">6</span> Regression Results Table</h2>
 </div>
 
 
+<div id="outline-container-org8cd29b5" class="outline-2">
+<h2 id="org8cd29b5"><span class="section-number-2">6</span> Regression Results Table</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+<b>Do not quote these results!!! Explanatory variable names and coefficient and not lined up!!!*</b>
+</p>
 
 
-<div id="outline-container-orgf4ae7a9" class="outline-2">
-<h2 id="orgf4ae7a9"><span class="section-number-2">7</span> Variables Available in Panel</h2>
+<table style="text-align:center"><caption><strong>Determinants of the Percent Change in Loan Loss Reserves</strong></caption>
+<tr><td colspan="5" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"></td><td colspan="4">Percent Change in Loan Loss Reserves</td></tr>
+<tr><td></td><td colspan="4" style="border-bottom: 1px solid black"></td></tr>
+<tr><td style="text-align:left"></td><td colspan="4">Loan Losses</td></tr>
+<tr><td style="text-align:left"></td><td>(1)</td><td>(2)</td><td>(3)</td><td>(4)</td></tr>
+<tr><td colspan="5" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Total Interest Income</td><td>-0.005</td><td></td><td></td><td>-0.002</td></tr>
+<tr><td style="text-align:left"></td><td>(0.015)</td><td></td><td></td><td>(0.007)</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Net Interest Margin</td><td>0.012</td><td>0.008</td><td>0.008</td><td>0.014<sup>**</sup></td></tr>
+<tr><td style="text-align:left"></td><td>(0.015)</td><td>(0.007)</td><td>(0.007)</td><td>(0.007)</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Total Assets</td><td>0.072<sup>***</sup></td><td>0.072<sup>***</sup></td><td>0.068<sup>***</sup></td><td>0.060<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td>(0.004)</td><td>(0.004)</td><td>(0.004)</td><td>(0.002)</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">ROA</td><td>-0.004</td><td>-0.004</td><td>-0.004</td><td>0.0001</td></tr>
+<tr><td style="text-align:left"></td><td>(0.005)</td><td>(0.005)</td><td>(0.005)</td><td>(0.0001)</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Net Charge-Offs</td><td>0.015</td><td>0.014</td><td>0.014</td><td>0.005</td></tr>
+<tr><td style="text-align:left"></td><td>(0.016)</td><td>(0.015)</td><td>(0.015)</td><td>(0.008)</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">T1 RBCR</td><td>0.0001</td><td>0.0001</td><td>-0.0001</td><td>0.001<sup>**</sup></td></tr>
+<tr><td style="text-align:left"></td><td>(0.001)</td><td>(0.001)</td><td>(0.001)</td><td>(0.0003)</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Deposit Service Charges</td><td>3.567<sup>*</sup></td><td>3.789<sup>*</sup></td><td>3.222<sup>*</sup></td><td>0.872</td></tr>
+<tr><td style="text-align:left"></td><td>(2.030)</td><td>(1.938)</td><td>(1.885)</td><td>(0.927)</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Taxes</td><td>-0.190</td><td>-0.182</td><td>-0.142</td><td>-0.166<sup>**</sup></td></tr>
+<tr><td style="text-align:left"></td><td>(0.140)</td><td>(0.144)</td><td>(0.142)</td><td>(0.075)</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Home Eq. Loans</td><td>0.416<sup>*</sup></td><td>0.427<sup>**</sup></td><td>0.425<sup>*</sup></td><td>-0.022</td></tr>
+<tr><td style="text-align:left"></td><td>(0.222)</td><td>(0.218)</td><td>(0.217)</td><td>(0.073)</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Real Est. Loans</td><td>-0.044</td><td>-0.045</td><td>-0.044</td><td>-0.007</td></tr>
+<tr><td style="text-align:left"></td><td>(0.046)</td><td>(0.046)</td><td>(0.046)</td><td>(0.018)</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Treasuries</td><td>0.308<sup>*</sup></td><td>0.311<sup>*</sup></td><td>0.305<sup>*</sup></td><td>0.098<sup>*</sup></td></tr>
+<tr><td style="text-align:left"></td><td>(0.164)</td><td>(0.164)</td><td>(0.168)</td><td>(0.058)</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Small C&I Loans</td><td>0.104</td><td>0.103</td><td>0.086</td><td>0.088</td></tr>
+<tr><td style="text-align:left"></td><td>(0.112)</td><td>(0.112)</td><td>(0.111)</td><td>(0.056)</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Net CDS</td><td>-3.261<sup>***</sup></td><td>-3.279<sup>***</sup></td><td></td><td></td></tr>
+<tr><td style="text-align:left"></td><td>(0.761)</td><td>(0.761)</td><td></td><td></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Long CDS</td><td></td><td></td><td>-5.111<sup>***</sup></td><td></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td>(0.916)</td><td></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Short CDS</td><td></td><td></td><td>5.875<sup>***</sup></td><td></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td>(1.025)</td><td></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Securities</td><td>-0.080<sup>*</sup></td><td>-0.075<sup>**</sup></td><td>-0.071<sup>**</sup></td><td>-0.032</td></tr>
+<tr><td style="text-align:left"></td><td>(0.041)</td><td>(0.035)</td><td>(0.035)</td><td>(0.019)</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Constant</td><td>-0.866<sup>***</sup></td><td>-0.871<sup>***</sup></td><td>-0.828<sup>***</sup></td><td>-0.745<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td>(0.072)</td><td>(0.069)</td><td>(0.070)</td><td>(0.041)</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td></tr>
+<tr><td colspan="5" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Observations</td><td>2,102</td><td>2,102</td><td>2,102</td><td>5,967</td></tr>
+<tr><td style="text-align:left">R<sup>2</sup></td><td>0.319</td><td>0.319</td><td>0.326</td><td>0.291</td></tr>
+<tr><td style="text-align:left">Adjusted R<sup>2</sup></td><td>0.315</td><td>0.315</td><td>0.321</td><td>0.289</td></tr>
+<tr><td style="text-align:left">Residual Std. Error</td><td>0.208 (df = 2087)</td><td>0.208 (df = 2088)</td><td>0.207 (df = 2087)</td><td>0.154 (df = 5953)</td></tr>
+<tr><td style="text-align:left">F Statistic</td><td>69.956<sup>***</sup> (df = 14; 2087)</td><td>75.359<sup>***</sup> (df = 13; 2088)</td><td>71.953<sup>***</sup> (df = 14; 2087)</td><td>187.673<sup>***</sup> (df = 13; 5953)</td></tr>
+<tr><td colspan="5" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"><em>Note:</em></td><td colspan="4" style="text-align:right"><sup>*</sup>p<0.1; <sup>**</sup>p<0.05; <sup>***</sup>p<0.01</td></tr>
+</table>
+
+<table style="text-align:center"><caption><strong>Determinants of the Percent Change in Loan Loss Reserves</strong></caption>
+<tr><td colspan="8" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Statistic</td><td>N</td><td>Mean</td><td>St. Dev.</td><td>Min</td><td>Pctl(25)</td><td>Pctl(75)</td><td>Max</td></tr>
+<tr><td colspan="8" style="border-bottom: 1px solid black"></td></tr></table>
+
+<table style="text-align:center"><caption><strong>Determinants of the Percent Change in Loan Loss Reserves</strong></caption>
+<tr><td colspan="1" style="border-bottom: 1px solid black"></td></tr><tr><td>Covariate data as from the fourth quarter of 2019. The change in loan loss reserves is from Q4 2019 to Q1 2020.</td></tr>
+<tr><td colspan="1" style="border-bottom: 1px solid black"></td></tr></table>
+</div>
 </div>
 
-<div id="outline-container-orgc071ed6" class="outline-2">
-<h2 id="orgc071ed6"><span class="section-number-2">8</span> Literature</h2>
+
+<div id="outline-container-org8871297" class="outline-2">
+<h2 id="org8871297"><span class="section-number-2">7</span> Variables Available in Panel</h2>
+</div>
+
+<div id="outline-container-org7191536" class="outline-2">
+<h2 id="org7191536"><span class="section-number-2">8</span> Literature</h2>
 <div class="outline-text-2" id="text-8">
 <p>
 JFE article on CDS and lending: <a href="https://www.sciencedirect.com/science/article/pii/S0304405X12001584?casa_token=CuW0jCIF9dMAAAAA:LgjC2qcmxNSO9Uwtp-vdaiJF4iYsUQTzEkFevPih6Dkl7fR_bn88wmX_gmTG7YO3I9B5xShrtkJ7">https://www.sciencedirect.com/science/article/pii/S0304405X12001584?casa_token=CuW0jCIF9dMAAAAA:LgjC2qcmxNSO9Uwtp-vdaiJF4iYsUQTzEkFevPih6Dkl7fR_bn88wmX_gmTG7YO3I9B5xShrtkJ7</a>
 </p>
 </div>
 </div>
+
+
+<div id="outline-container-orgae27ad3" class="outline-2">
+<h2 id="orgae27ad3"><span class="section-number-2">9</span> Unformatted Results</h2>
+<div class="outline-text-2" id="text-9">
+<pre class="example" id="orgd27a728">
+
+&lt;table style="text-align:center"&gt;&lt;caption&gt;&lt;strong&gt;Determinants of the Percent Change in Loan Loss Reserves&lt;/strong&gt;&lt;/caption&gt;
+&lt;tr&gt;&lt;td colspan="5" style="border-bottom: 1px solid black"&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td colspan="4"&gt;Percent Change in Loan Loss Reserves&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td colspan="4" style="border-bottom: 1px solid black"&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td colspan="4"&gt;Loan Losses&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;(1)&lt;/td&gt;&lt;td&gt;(2)&lt;/td&gt;&lt;td&gt;(3)&lt;/td&gt;&lt;td&gt;(4)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td colspan="5" style="border-bottom: 1px solid black"&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style="text-align:left"&gt;Total Interest Income&lt;/td&gt;&lt;td&gt;-0.005&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;-0.002&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;(0.015)&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;(0.007)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;Net Interest Margin&lt;/td&gt;&lt;td&gt;0.012&lt;/td&gt;&lt;td&gt;0.008&lt;/td&gt;&lt;td&gt;0.008&lt;/td&gt;&lt;td&gt;0.014&lt;sup&gt;**&lt;/sup&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;(0.015)&lt;/td&gt;&lt;td&gt;(0.007)&lt;/td&gt;&lt;td&gt;(0.007)&lt;/td&gt;&lt;td&gt;(0.007)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;Total Assets&lt;/td&gt;&lt;td&gt;0.072&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;0.072&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;0.068&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;0.060&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;(0.004)&lt;/td&gt;&lt;td&gt;(0.004)&lt;/td&gt;&lt;td&gt;(0.004)&lt;/td&gt;&lt;td&gt;(0.002)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;ROA&lt;/td&gt;&lt;td&gt;-0.004&lt;/td&gt;&lt;td&gt;-0.004&lt;/td&gt;&lt;td&gt;-0.004&lt;/td&gt;&lt;td&gt;0.0001&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;(0.005)&lt;/td&gt;&lt;td&gt;(0.005)&lt;/td&gt;&lt;td&gt;(0.005)&lt;/td&gt;&lt;td&gt;(0.0001)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;Net Charge-Offs&lt;/td&gt;&lt;td&gt;0.015&lt;/td&gt;&lt;td&gt;0.014&lt;/td&gt;&lt;td&gt;0.014&lt;/td&gt;&lt;td&gt;0.005&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;(0.016)&lt;/td&gt;&lt;td&gt;(0.015)&lt;/td&gt;&lt;td&gt;(0.015)&lt;/td&gt;&lt;td&gt;(0.008)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;T1 RBCR&lt;/td&gt;&lt;td&gt;0.0001&lt;/td&gt;&lt;td&gt;0.0001&lt;/td&gt;&lt;td&gt;-0.0001&lt;/td&gt;&lt;td&gt;0.001&lt;sup&gt;**&lt;/sup&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;(0.001)&lt;/td&gt;&lt;td&gt;(0.001)&lt;/td&gt;&lt;td&gt;(0.001)&lt;/td&gt;&lt;td&gt;(0.0003)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;Deposit Service Charges&lt;/td&gt;&lt;td&gt;3.567&lt;sup&gt;*&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;3.789&lt;sup&gt;*&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;3.222&lt;sup&gt;*&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;0.872&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;(2.030)&lt;/td&gt;&lt;td&gt;(1.938)&lt;/td&gt;&lt;td&gt;(1.885)&lt;/td&gt;&lt;td&gt;(0.927)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;Taxes&lt;/td&gt;&lt;td&gt;-0.190&lt;/td&gt;&lt;td&gt;-0.182&lt;/td&gt;&lt;td&gt;-0.142&lt;/td&gt;&lt;td&gt;-0.166&lt;sup&gt;**&lt;/sup&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;(0.140)&lt;/td&gt;&lt;td&gt;(0.144)&lt;/td&gt;&lt;td&gt;(0.142)&lt;/td&gt;&lt;td&gt;(0.075)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;Home Eq. Loans&lt;/td&gt;&lt;td&gt;0.416&lt;sup&gt;*&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;0.427&lt;sup&gt;**&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;0.425&lt;sup&gt;*&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;-0.022&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;(0.222)&lt;/td&gt;&lt;td&gt;(0.218)&lt;/td&gt;&lt;td&gt;(0.217)&lt;/td&gt;&lt;td&gt;(0.073)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;Real Est. Loans&lt;/td&gt;&lt;td&gt;-0.044&lt;/td&gt;&lt;td&gt;-0.045&lt;/td&gt;&lt;td&gt;-0.044&lt;/td&gt;&lt;td&gt;-0.007&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;(0.046)&lt;/td&gt;&lt;td&gt;(0.046)&lt;/td&gt;&lt;td&gt;(0.046)&lt;/td&gt;&lt;td&gt;(0.018)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;Treasuries&lt;/td&gt;&lt;td&gt;0.308&lt;sup&gt;*&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;0.311&lt;sup&gt;*&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;0.305&lt;sup&gt;*&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;0.098&lt;sup&gt;*&lt;/sup&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;(0.164)&lt;/td&gt;&lt;td&gt;(0.164)&lt;/td&gt;&lt;td&gt;(0.168)&lt;/td&gt;&lt;td&gt;(0.058)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;Small C&amp;I Loans&lt;/td&gt;&lt;td&gt;0.104&lt;/td&gt;&lt;td&gt;0.103&lt;/td&gt;&lt;td&gt;0.086&lt;/td&gt;&lt;td&gt;0.088&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;(0.112)&lt;/td&gt;&lt;td&gt;(0.112)&lt;/td&gt;&lt;td&gt;(0.111)&lt;/td&gt;&lt;td&gt;(0.056)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;Net CDS&lt;/td&gt;&lt;td&gt;-3.261&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;-3.279&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;(0.761)&lt;/td&gt;&lt;td&gt;(0.761)&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;Long CDS&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;-5.111&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;(0.916)&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;Short CDS&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;5.875&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;(1.025)&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;Securities&lt;/td&gt;&lt;td&gt;-0.080&lt;sup&gt;*&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;-0.075&lt;sup&gt;**&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;-0.071&lt;sup&gt;**&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;-0.032&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;(0.041)&lt;/td&gt;&lt;td&gt;(0.035)&lt;/td&gt;&lt;td&gt;(0.035)&lt;/td&gt;&lt;td&gt;(0.019)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;Constant&lt;/td&gt;&lt;td&gt;-0.866&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;-0.871&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;-0.828&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;-0.745&lt;sup&gt;***&lt;/sup&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;(0.072)&lt;/td&gt;&lt;td&gt;(0.069)&lt;/td&gt;&lt;td&gt;(0.070)&lt;/td&gt;&lt;td&gt;(0.041)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td colspan="5" style="border-bottom: 1px solid black"&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style="text-align:left"&gt;Observations&lt;/td&gt;&lt;td&gt;2,102&lt;/td&gt;&lt;td&gt;2,102&lt;/td&gt;&lt;td&gt;2,102&lt;/td&gt;&lt;td&gt;5,967&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;R&lt;sup&gt;2&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;0.319&lt;/td&gt;&lt;td&gt;0.319&lt;/td&gt;&lt;td&gt;0.326&lt;/td&gt;&lt;td&gt;0.291&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;Adjusted R&lt;sup&gt;2&lt;/sup&gt;&lt;/td&gt;&lt;td&gt;0.315&lt;/td&gt;&lt;td&gt;0.315&lt;/td&gt;&lt;td&gt;0.321&lt;/td&gt;&lt;td&gt;0.289&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;Residual Std. Error&lt;/td&gt;&lt;td&gt;0.208 (df = 2087)&lt;/td&gt;&lt;td&gt;0.208 (df = 2088)&lt;/td&gt;&lt;td&gt;0.207 (df = 2087)&lt;/td&gt;&lt;td&gt;0.154 (df = 5953)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="text-align:left"&gt;F Statistic&lt;/td&gt;&lt;td&gt;69.956&lt;sup&gt;***&lt;/
+(df = 14; 2087)&lt;/td&gt;&lt;td&gt;75.359&lt;sup&gt;***&lt;/
+(df = 13; 2088)&lt;/td&gt;&lt;td&gt;71.953&lt;sup&gt;***&lt;/
+(df = 14; 2087)&lt;/td&gt;&lt;td&gt;187.673&lt;sup&gt;***&lt;/
+(df = 13; 5953)&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td colspan="5" style="border-bottom: 1px solid black"&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style="text-align:left"&gt;&lt;em&gt;Note:&lt;/em&gt;&lt;/td&gt;&lt;td colspan="4" style="text-align:right"&gt;&lt;sup&gt;*&lt;/sup&gt;p&lt;0.1; &lt;sup&gt;**&lt;/sup&gt;p&lt;0.05; &lt;sup&gt;***&lt;/sup&gt;p&lt;0.01&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;table style="text-align:center"&gt;&lt;caption&gt;&lt;strong&gt;Determinants of the Percent Change in Loan Loss Reserves&lt;/strong&gt;&lt;/caption&gt;
+&lt;tr&gt;&lt;td colspan="8" style="border-bottom: 1px solid black"&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style="text-align:left"&gt;Statistic&lt;/td&gt;&lt;td&gt;N&lt;/td&gt;&lt;td&gt;Mean&lt;/td&gt;&lt;td&gt;St. Dev.&lt;/td&gt;&lt;td&gt;Min&lt;/td&gt;&lt;td&gt;Pctl(25)&lt;/td&gt;&lt;td&gt;Pctl(75)&lt;/td&gt;&lt;td&gt;Max&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td colspan="8" style="border-bottom: 1px solid black"&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;table style="text-align:center"&gt;&lt;caption&gt;&lt;strong&gt;Determinants of the Percent Change in Loan Loss Reserves&lt;/strong&gt;&lt;/caption&gt;
+&lt;tr&gt;&lt;td colspan="1" style="border-bottom: 1px solid black"&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Covariate data as from the fourth quarter of 2019. The change in loan loss reserves is from Q4 2019 to Q1 2020.&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td colspan="1" style="border-bottom: 1px solid black"&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+Call:
+lm(formula = per_change ~ intincy
+nimy
+asset5
+roa
+ntlnlsr
+
+    rbc1rwaj
+deposit_fees
+taxes_over_rev_x
+home_eq
+first_lien_re
+
+    treas_over_assets
+SB_CI_assets
+net_CDS
+securities_assets, 
+    data = reg_data)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.95450 -0.11670 -0.03405  0.06537  0.83384 
+
+Coefficients:
+                    Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)       -8.657e-01  5.613e-02 -15.424  &lt; 2e-16 ***
+intincy           -4.580e-03  1.295e-02  -0.354   0.7236    
+nimy               1.189e-02  1.302e-02   0.913   0.3612    
+asset5             7.190e-02  3.009e-03  23.896  &lt; 2e-16 ***
+roa               -3.812e-03  4.375e-03  -0.871   0.3837    
+ntlnlsr            1.530e-02  1.114e-02   1.374   0.1697    
+rbc1rwaj           5.402e-05  6.847e-04   0.079   0.9371    
+deposit_fees       3.567e+00  2.307e+00   1.546   0.1223    
+taxes_over_rev_x  -1.900e-01  1.329e-01  -1.430   0.1528    
+home_eq            4.157e-01  2.270e-01   1.831   0.0672 .  
+first_lien_re     -4.448e-02  3.411e-02  -1.304   0.1924    
+treas_over_assets  3.083e-01  1.670e-01   1.846   0.0650 .  
+SB_CI_assets       1.036e-01  1.040e-01   0.996   0.3194    
+net_CDS           -3.261e+00  7.095e-01  -4.597 4.55e-06 ***
+securities_assets -8.012e-02  4.430e-02  -1.809   0.0707 .  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.2076 on 2087 degrees of freedom
+  (3865 observations deleted due to missingness)
+Multiple R-squared:  0.3194,	Adjusted R-squared:  0.3148 
+F-statistic: 69.96 on 14 and 2087 DF,  p-value: &lt; 2.2e-16
+
+      (Intercept)           intincy              nimy            asset5 
+     0.0715785159      0.0153828475      0.0146616505      0.0036061525 
+              roa           ntlnlsr          rbc1rwaj      deposit_fees 
+     0.0045484188      0.0163869587      0.0006491198      2.0304601815 
+ taxes_over_rev_x           home_eq     first_lien_re treas_over_assets 
+     0.1399009805      0.2220588339      0.0460434006      0.1644537251 
+     SB_CI_assets           net_CDS securities_assets 
+     0.1115472433      0.7607490429      0.0411169947
+
+Call:
+lm(formula = per_change ~ nimy
+asset5
+roa
+ntlnlsr
+rbc1rwaj
+
+    deposit_fees
+taxes_over_rev_x
+home_eq
+first_lien_re
+
+    treas_over_assets
+SB_CI_assets
+net_CDS
+securities_assets, 
+    data = reg_data)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.95384 -0.11667 -0.03330  0.06432  0.83194 
+
+Coefficients:
+                    Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)       -8.713e-01  5.382e-02 -16.191  &lt; 2e-16 ***
+nimy               7.636e-03  4.969e-03   1.537   0.1245    
+asset5             7.178e-02  2.987e-03  24.031  &lt; 2e-16 ***
+roa               -3.874e-03  4.371e-03  -0.886   0.3755    
+ntlnlsr            1.420e-02  1.069e-02   1.328   0.1843    
+rbc1rwaj           6.961e-05  6.832e-04   0.102   0.9188    
+deposit_fees       3.789e+00  2.220e+00   1.707   0.0880 .  
+taxes_over_rev_x  -1.823e-01  1.310e-01  -1.391   0.1643    
+home_eq            4.269e-01  2.247e-01   1.900   0.0576 .  
+first_lien_re     -4.471e-02  3.410e-02  -1.311   0.1899    
+treas_over_assets  3.113e-01  1.667e-01   1.867   0.0621 .  
+SB_CI_assets       1.029e-01  1.039e-01   0.990   0.3224    
+net_CDS           -3.279e+00  7.074e-01  -4.636 3.77e-06 ***
+securities_assets -7.467e-02  4.152e-02  -1.798   0.0723 .  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.2076 on 2088 degrees of freedom
+  (3865 observations deleted due to missingness)
+Multiple R-squared:  0.3194,	Adjusted R-squared:  0.3151 
+F-statistic: 75.36 on 13 and 2088 DF,  p-value: &lt; 2.2e-16
+
+      (Intercept)              nimy            asset5               roa 
+     0.0687635936      0.0072098768      0.0035834399      0.0045473372 
+          ntlnlsr          rbc1rwaj      deposit_fees  taxes_over_rev_x 
+     0.0152445835      0.0006531024      1.9375401404      0.1440841014 
+          home_eq     first_lien_re treas_over_assets      SB_CI_assets 
+     0.2178016147      0.0457981191      0.1641675843      0.1116581406 
+          net_CDS securities_assets 
+     0.7613794290      0.0354119683
+
+Call:
+lm(formula = per_change ~ nimy
+asset5
+roa
+ntlnlsr
+rbc1rwaj
+
+    deposit_fees
+taxes_over_rev_x
+home_eq
+first_lien_re
+
+    treas_over_assets
+SB_CI_assets
+credit_derivs_bene_assets
+
+    credit_derivs_guarantor_assets
+securities_assets, data = reg_data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-0.9529 -0.1162 -0.0338  0.0626  0.8314 
+
+Coefficients:
+                                 Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)                    -8.277e-01  5.450e-02 -15.186  &lt; 2e-16 ***
+nimy                            8.478e-03  4.951e-03   1.712   0.0870 .  
+asset5                          6.837e-02  3.074e-03  22.238  &lt; 2e-16 ***
+roa                            -3.874e-03  4.352e-03  -0.890   0.3734    
+ntlnlsr                         1.355e-02  1.065e-02   1.273   0.2032    
+rbc1rwaj                       -5.378e-05  6.808e-04  -0.079   0.9370    
+deposit_fees                    3.222e+00  2.214e+00   1.455   0.1457    
+taxes_over_rev_x               -1.419e-01  1.308e-01  -1.085   0.2781    
+home_eq                         4.246e-01  2.238e-01   1.897   0.0579 .  
+first_lien_re                  -4.415e-02  3.395e-02  -1.300   0.1937    
+treas_over_assets               3.050e-01  1.660e-01   1.837   0.0664 .  
+SB_CI_assets                    8.647e-02  1.035e-01   0.835   0.4038    
+credit_derivs_bene_assets      -5.111e+00  8.193e-01  -6.239 5.33e-10 ***
+credit_derivs_guarantor_assets  5.875e+00  9.207e-01   6.381 2.16e-10 ***
+securities_assets              -7.077e-02  4.135e-02  -1.711   0.0872 .  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.2067 on 2087 degrees of freedom
+  (3865 observations deleted due to missingness)
+Multiple R-squared:  0.3255,	Adjusted R-squared:  0.321 
+F-statistic: 71.95 on 14 and 2087 DF,  p-value: &lt; 2.2e-16
+
+                   (Intercept)                           nimy 
+                  0.0699546946                   0.0072428525 
+                        asset5                            roa 
+                  0.0036895390                   0.0045271709 
+                       ntlnlsr                       rbc1rwaj 
+                  0.0153390917                   0.0006553551 
+                  deposit_fees               taxes_over_rev_x 
+                  1.8852800701                   0.1422269830 
+                       home_eq                  first_lien_re 
+                  0.2170461864                   0.0456573296 
+             treas_over_assets                   SB_CI_assets 
+                  0.1682402496                   0.1111790849 
+     credit_derivs_bene_assets credit_derivs_guarantor_assets 
+                  0.9157977498                   1.0251243846 
+             securities_assets 
+                  0.0353135180
+
+Call:
+lm(formula = per_change ~ intincy
+nimy
+asset5
+roa
+ntlnlsr
+
+    rbc1rwaj
+deposit_fees
+taxes_over_rev_x
+home_eq
+first_lien_re
+
+    treas_over_assets
+SB_CI_assets
+securities_assets, data = reg_data)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1.06851 -0.06934 -0.01993  0.03780  0.96820 
+
+Coefficients:
+                    Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)       -0.7453912  0.0250918 -29.707   &lt;2e-16 ***
+intincy           -0.0016086  0.0055310  -0.291   0.7712    
+nimy               0.0137758  0.0056205   2.451   0.0143 *  
+asset5             0.0604160  0.0014889  40.578   &lt;2e-16 ***
+roa                0.0001430  0.0002596   0.551   0.5817    
+ntlnlsr            0.0052223  0.0048766   1.071   0.2843    
+rbc1rwaj           0.0005527  0.0002579   2.143   0.0322 *  
+deposit_fees       0.8717824  1.0492185   0.831   0.4061    
+taxes_over_rev_x  -0.1664242  0.0655542  -2.539   0.0112 *  
+home_eq           -0.0221604  0.0839617  -0.264   0.7918    
+first_lien_re     -0.0066497  0.0147853  -0.450   0.6529    
+treas_over_assets  0.0984695  0.0651733   1.511   0.1309    
+SB_CI_assets       0.0884314  0.0474468   1.864   0.0624 .  
+securities_assets -0.0315105  0.0185269  -1.701   0.0890 .  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.1538 on 5953 degrees of freedom
+Multiple R-squared:  0.2907,	Adjusted R-squared:  0.2891 
+F-statistic: 187.7 on 13 and 5953 DF,  p-value: &lt; 2.2e-16
+
+      (Intercept)           intincy              nimy            asset5 
+     4.060974e-02      6.831318e-03      6.526889e-03      2.185409e-03 
+              roa           ntlnlsr          rbc1rwaj      deposit_fees 
+     9.184303e-05      8.469190e-03      2.725292e-04      9.266614e-01 
+ taxes_over_rev_x           home_eq     first_lien_re treas_over_assets 
+     7.502069e-02      7.259766e-02      1.820811e-02      5.806335e-02 
+     SB_CI_assets securities_assets 
+     5.586909e-02      1.948822e-02
+</pre>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Matt Brigida</p>
-<p class="date">Created: 2021-04-08 Thu 16:15</p>
+<p class="date">Created: 2021-04-09 Fri 18:19</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
